@@ -7,25 +7,30 @@
 # @Software: PyCharm
 
 
-import os
+def get_path(path,path_type):
+    import os
 
-path=r'C:\Users\wtong\Documents\王彤\数据可视化课题\sourse_file'
+    filepath = []
+    file_path = []
+    ot_path = []
+    dir_name = os.listdir(path)
 
-import os
+    for i in range(len(dir_name)):
+        filepath.append(os.getcwd() + '\\' + dir_name[i])
+        if os.path.isfile(filepath[i]):
+            file_path.append(filepath[i])
+        else:
+            ot_path.append(filepath[i])
 
-filepath = []
-ot_path = []
-dir_name = os.listdir(path)
-for i in range(len(dir_name)):
-    filepath.append(os.getcwd() + '\\' + dir_name[i])
-print(filepath[0])
+    if path_type:
+        return file_path
+    else:
+        return ot_path
 
-print(os.path.isdir(filepath[0]))
 
-    flag=os.path.isfile(filepath[i])
-    print(flag)
 
-    if os.path.isdir(filepath[i]):
-        print(filepath[i])
 
+path = r'C:\Users\wtong\Documents\王彤\数据可视化课题\sourse_file'
+t = get_path('1',0)
+print(t)
 
