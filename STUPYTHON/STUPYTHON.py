@@ -7,9 +7,11 @@
 # @Software: PyCharm
 
 
-def get_path(path,path_type):
-    import os
+#def get_path(path,path_type):
+#
 
+def get_filepath(path):
+    import os
     filepath = []
     file_path = []
     ot_path = []
@@ -17,20 +19,27 @@ def get_path(path,path_type):
 
     for i in range(len(dir_name)):
         filepath.append(os.getcwd() + '\\' + dir_name[i])
+
         if os.path.isfile(filepath[i]):
+            print(filepath[i])
             file_path.append(filepath[i])
         else:
             ot_path.append(filepath[i])
 
-    if path_type:
-        return file_path
-    else:
-        return ot_path
+    return filepath
+
+path = r'C:\Users\wtong\Desktop\DataWorks'
+
+print(get_filepath(path))
 
 
 
 
-path = r'C:\Users\wtong\Documents\王彤\数据可视化课题\sourse_file'
-t = get_path('1',0)
-print(t)
+
+
+
+
+
+
+
 

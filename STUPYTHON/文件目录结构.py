@@ -32,6 +32,7 @@ def get_path(path,num):
 
 
 
-path = r'C:\Users\wtong\Documents\王彤\数据可视化课题\sourse_file'
-t = get_path(path,0)
+path = r'C:\Users\wtong\Desktop\DataWorks'
+t = get_path(path,1)
 print(t)
+
