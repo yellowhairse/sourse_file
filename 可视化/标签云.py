@@ -18,7 +18,7 @@ def db_exec(p_sql):
     db = pymysql.connect(host='drdshbga8qzszt6opublic.drds.aliyuncs.com',
                          port=3306,
                          user='its_kf01_workflow',
-                         passwd='ServyouITS',
+                         passwd='SerITS',
                          database='kf01_workflow',
                          )
     cursors = db.cursor()
