@@ -15,3 +15,7 @@ def get_FtoCel(fahrenheit):
     return ("摄氏温度为%.2f" % ((F - 32)/1.8))
 
 
+
+a='ssdca'
+
+print("{:.0%}".format(0.2))
