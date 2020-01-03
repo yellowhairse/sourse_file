@@ -40,19 +40,30 @@ def f_find_text(find_str,file_path,filename):
     for i in range(len(name)):
         if name[i] not in disname:
             disname.append(name[i])
+        else:
+            pass
 
     return disname
 
 
-file_path = r"C:\Users\wtong\Desktop\work\其他"
-filename = r'test.txt'
+file_path = r"C:\Users\wtong\Desktop\work\其他\复杂重点清册清单"
+filename = ['个人所得税应申报清册.txt','净入库.txt','征收开票.txt']
 
 l_name = ['DIM','F_BT','F_RT']
 
-table_name = []
+temp_tab = []
+tab_name = []
 
 for i in range(len(l_name)):
-    table_name.append(f_find_text(l_name[i], file_path, filename))
+    for j in range(len(filename)):
+        temp_tab.extend(f_find_text(l_name[i], file_path, filename[j]))
 
-print(table_name)
+for i in range(len(temp_tab)):
+    if temp_tab[i] not in tab_name:
+        tab_name.append(temp_tab[i])
+    else:
+        pass
+
+
+print(tab_name)
 
