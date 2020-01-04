@@ -7,7 +7,6 @@
 # @Software: PyCharm
 
 
-path = r'C:\Users\wtong\Desktop\ODPS'
 
 
 import os
@@ -39,27 +38,39 @@ def get_foldername(path):
     outer： [foldername]
     例子：get_foldername(path)'''
 
-    path1 = path
+    dir_name = list()
+    dir_name.append(path)
+    st_idx = 0
+    ed_idx = 1
 
-    def get_foldername_local(path1):
+    def get_foldername_local(path):
         file_name = []
         folder_name = []
-        list = os.listdir(path1)
+        list = os.listdir(path)
 
         for i in range(len(list)):
-            list[i] = path1 + '\\' + list[i]
+            list[i] = path + '\\' + list[i]
             if os.path.isdir(list[i]):
                 folder_name.append(list[i])
             else:
                 file_name.append(list[i])
-
         return folder_name
 
-    while  get_foldername_local(path)
+    while st_idx < ed_idx:
+        for i in dir_name[st_idx:ed_idx]:
+            for j in get_foldername_local(i):
+                dir_name.append(j)
+        st_idx = ed_idx
+        ed_idx = len(dir_name)
+
+    return dir_name
+
+path = r'C:\Users\wtong\Desktop\ODPS'
+
+get_foldername(path)
 
 
 
-print(get_foldername(path))
 
 
 
