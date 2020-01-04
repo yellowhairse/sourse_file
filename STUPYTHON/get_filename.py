@@ -16,7 +16,7 @@ def get_filename(path):
     '''返回目录下所有文件名
     input： [path] [表名头大写]
     outer： [filename]
-    例子：get_filename(path)'''
+    sample：get_filename(path)'''
 
     file_name = []
     folder_name = []
@@ -36,7 +36,7 @@ def get_foldername(path):
     '''返回目录下所有文件夹名称
     input： [path] [表名头大写]
     outer： [foldername]
-    例子：get_foldername(path)'''
+    sample：get_foldername(path)'''
 
     dir_name = list()
     dir_name.append(path)
@@ -70,7 +70,7 @@ path = r'C:\Users\wtong\Desktop\ODPS'
 get_foldername(path)
 
 
-
+help(get_foldername)
 
 
 
