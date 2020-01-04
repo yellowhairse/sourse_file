@@ -5,20 +5,18 @@
 # @Site    : 
 # @File    : find_text.py
 # @Software: PyCharm
-
+#coding = utf - 8
 
 import os
 
-#coding=utf-8
-# 提取文件内sql 的表明（输入表名称的开头）
-#param [find_str] [表名头大写]
-#param [file_path] [文件路径]
-#param [filename] [文件名称]
-#return [表名]
-#f_find_text('DIM',file_path,filename)
-
 def f_find_text(find_str,file_path,filename):
 
+    '''提取文件内sql 的表明（输入表名称的开头）
+    input：param [find_str] [表名头大写]
+           param [file_path] [文件路径]
+           param [filename] [文件名称]
+    outer：return [表名]
+    例子：f_find_text('DIM',file_path,filename)'''
     os.chdir(file_path)
     f = open(filename,encoding='utf-8')
     name = []
@@ -67,3 +65,4 @@ for i in range(len(temp_tab)):
 
 print(tab_name)
 
+help(f_find_text)
