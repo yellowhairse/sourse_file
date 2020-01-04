@@ -55,8 +55,7 @@ def get_foldername(path):
 
         return folder_name
 
-    while 
-    get_foldername_local(path)
+    while  get_foldername_local(path)
 
 
 
