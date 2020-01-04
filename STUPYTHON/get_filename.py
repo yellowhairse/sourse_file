@@ -65,12 +65,11 @@ def get_foldername(path):
 
     return dir_name
 
-path = r'C:\Users\wtong\Desktop\ODPS'
+path = r'C:\Users\wtong\Desktop'
 
-get_foldername(path)
+for i in get_foldername(path):
+    print(i)
 
-
-help(get_foldername)
 
 
 
