@@ -6,9 +6,6 @@
 # @File    : get_filename.py
 # @Software: PyCharm
 
-
-
-
 import os
 
 def get_filename(path):
@@ -67,13 +64,5 @@ def get_foldername(path):
 
 path = r'C:\Users\wtong\Desktop'
 
-for i in get_foldername(path):
+for i in get_filename(path):
     print(i)
-
-
-
-
-
-
-
-
