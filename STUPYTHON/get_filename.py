@@ -8,7 +8,7 @@
 
 import os
 
-def get_filename(path,flag):
+def get_listname(path,flag):
 
     '''返回目录下所有文件名
     input： [path] [路径]
@@ -36,21 +36,21 @@ def get_filename(path,flag):
         return err_code
 
 
-def get_foldername(path):
+def get_everylistname(path):
 
     '''返回目录下所有文件夹名称
     input： [path] [表名头大写]
     outer： [foldername]
     sample：get_foldername(path)'''
 
-    dir_name = list(path)
-    dir_name.append()
+    dir_name = list()
+    dir_name.append(path)
     st_idx = 0
     ed_idx = 1
 
     while st_idx < ed_idx:
         for i in dir_name[st_idx:ed_idx]:
-            for j in get_filename(i,'D'):
+            for j in get_listname(i,'D'):
                 dir_name.append(j)
         st_idx = ed_idx
         ed_idx = len(dir_name)
@@ -59,9 +59,7 @@ def get_foldername(path):
 
 path = r'C:\Users\wtong\Desktop\ODPS'
 
-print(path)
-
-for i in get_foldername(path):
+for i in get_everylistname(path):
     print(i)
 
 
