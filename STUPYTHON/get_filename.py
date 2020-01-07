@@ -11,13 +11,14 @@ import os
 def get_filename(path,flag):
 
     '''返回目录下所有文件名
-    input： [path] [表名头大写]
-            [flag] [表名头大写]
+    input： [path] [路径]
+            [flag] [返回类型: F 文件 D 目录]
     outer： [filename]
     sample：get_filename(path)'''
 
     file_name = []
     folder_name = []
+    err_code = '您输入的返回类型不符合要求',
     list = os.listdir(path)
 
     for i in range(len(list)):
@@ -32,7 +33,8 @@ def get_filename(path,flag):
     elif flag == 'D':
         return folder_name
     else:
-        '请输入正确条件'
+        return err_code
+
 
 def get_foldername(path):
 
@@ -41,34 +43,27 @@ def get_foldername(path):
     outer： [foldername]
     sample：get_foldername(path)'''
 
-    dir_name = list()
-    dir_name.append(path)
+    dir_name = list(path)
+    dir_name.append()
     st_idx = 0
     ed_idx = 1
 
-    def get_foldername_local(path):
-        file_name = []
-        folder_name = []
-        list = os.listdir(path)
-
-        for i in range(len(list)):
-            list[i] = path + '\\' + list[i]
-            if os.path.isdir(list[i]):
-                folder_name.append(list[i])
-            else:
-                file_name.append(list[i])
-        return folder_name
-
     while st_idx < ed_idx:
         for i in dir_name[st_idx:ed_idx]:
-            for j in get_foldername_local(i):
+            for j in get_filename(i,'D'):
                 dir_name.append(j)
         st_idx = ed_idx
         ed_idx = len(dir_name)
 
     return dir_name
 
-path = r'C:\Users\wtong\Desktop'
+path = r'C:\Users\wtong\Desktop\ODPS'
 
-for i in get_filename(path,'D'):
+print(path)
+
+for i in get_foldername(path):
     print(i)
+
+
+
+
