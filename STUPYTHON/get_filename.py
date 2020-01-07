@@ -8,10 +8,11 @@
 
 import os
 
-def get_filename(path):
+def get_filename(path,flag):
 
     '''返回目录下所有文件名
     input： [path] [表名头大写]
+            [flag] [表名头大写]
     outer： [filename]
     sample：get_filename(path)'''
 
@@ -26,7 +27,12 @@ def get_filename(path):
         else:
             file_name.append(list[i])
 
-    return file_name
+    if flag == 'F':
+        return file_name
+    elif flag == 'D':
+        return folder_name
+    else:
+        '请输入正确条件'
 
 def get_foldername(path):
 
@@ -64,5 +70,5 @@ def get_foldername(path):
 
 path = r'C:\Users\wtong\Desktop'
 
-for i in get_filename(path):
+for i in get_filename(path,'D'):
     print(i)
