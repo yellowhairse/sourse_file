@@ -45,8 +45,8 @@ def get_everylistname(path):
 
     dir_name = list()
     dir_name.append(path)
-    st_idx = 0
-    ed_idx = 1
+    GlobalValue =(0,1)
+    st_idx , ed_idx = GlobalValue
 
     while st_idx < ed_idx:
         for i in dir_name[st_idx:ed_idx]:
@@ -61,7 +61,3 @@ path = r'C:\Users\wtong\Desktop\ODPS'
 
 for i in get_everylistname(path):
     print(i)
-
-
-
-
