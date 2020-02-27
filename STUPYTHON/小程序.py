@@ -21,7 +21,10 @@
 # print("{:.0%}".format(0.2))
 
 
+import os
+path=os.getcwd()
 
+print(path)
 
 
 

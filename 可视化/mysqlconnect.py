@@ -8,15 +8,15 @@
 
 def db_exec(p_sql):
     # 创建数据库连接
-    import pymysql
+    from pymysql import connect
     # 设置SQL
     tatal_sql = p_sql
-    db = pymysql.connect(host='drdshbga8qzszt6opublic.drds.aliyuncs.com',
-                         port=3306,
-                         user='its_kf01_workflow',
-                         passwd='',
-                         database='kf01_workflow',
-                         )
+    db = connect(host='drdshbga8qzszt6opublic.drds.aliyuncs.com',
+                 port=3306,
+                 user='its_kf01_workflow',
+                 passwd='ServyouITS',
+                 database='kf01_workflow',
+                 )
     cursors = db.cursor()
     # 执行SQL
     cursors.execute(tatal_sql)
@@ -26,7 +26,7 @@ def db_exec(p_sql):
     # 关闭连接
     cursors.close()
 
-testsql="select * from wf_task_target"
+testsql="select * from wf_task_target limit 1"
 node_info=db_exec(testsql)
 
 for i in range(len(node_info)):

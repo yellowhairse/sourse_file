@@ -57,7 +57,14 @@ def get_everylistname(path):
 
     return dir_name
 
-path = r'C:\Users\wtong\Desktop\ODPS'
+path = r'E:\SVN\资料文件\MX_ZRRYH_CXTJ\codes'
 
-for i in get_everylistname(path):
-    print(i)
+get_listname(path,'D')
+# filename = []
+# for i in get_everylistname(path):
+#
+#     filename.extend(get_listname(i,'F'))
+#
+# for j in filename:
+#     print(j)
+
