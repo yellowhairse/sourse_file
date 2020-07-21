@@ -8,6 +8,17 @@
 
 import os
 
+def get_new_report(filepath):
+    '''返回目录下创建时间最新的文件的名称
+     input： [filepath] [路径]
+     outer： [filename]
+     sample：get_filename(path)'''
+    lists = os.listdir(filepath)  #列出目录的下所有文件和文件夹保存到lists
+    lists.sort(key=lambda fn:os.path.getmtime(filepath + "\\" + fn))  # 按时间排序
+    filename = os.path.join(filepath,lists[-1])  # 获取最新的文件保存到file_new
+    return filename
+
+
 def get_listname(path,flag):
 
     '''返回目录下所有文件名
